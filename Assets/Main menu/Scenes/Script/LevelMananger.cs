@@ -17,4 +17,10 @@ public class LevelMananger : MonoBehaviour
     public void Carganivel(string nivel){
         SceneManager.LoadScene(nivel);
     }
+
+    public void Salir(){
+      Application.Quit();
+      Debug.Log("Salir");
+    }
+
 }
