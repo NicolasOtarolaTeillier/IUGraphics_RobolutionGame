@@ -22,4 +22,6 @@ public class Rotar : MonoBehaviour
     {
         transform.RotateAround(referente.transform.position,referente.transform.up,velocidad * Time.deltaTime);
     }
+
+
 }

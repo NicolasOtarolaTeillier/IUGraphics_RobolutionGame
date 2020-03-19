@@ -21,6 +21,7 @@ public class LevelMananger : MonoBehaviour
     public void Salir(){
       Application.Quit();
       Debug.Log("Salir");
+      
     }
 
 }

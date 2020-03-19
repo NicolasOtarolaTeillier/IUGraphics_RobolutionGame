@@ -27,12 +27,17 @@ ModelImporter:
     4300002: Sphere.001
     10800000: Point.001
     10800002: Point.002
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tierra_contaminada
+    second: {fileID: 2100000, guid: ccaaea54ee3e5cc47b61728e2e0ae7fc, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
