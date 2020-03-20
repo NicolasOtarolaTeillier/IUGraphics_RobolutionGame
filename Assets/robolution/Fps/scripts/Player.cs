@@ -7,7 +7,8 @@ public class Player : MonoBehaviour
     private CharacterController _controller;
 
     [SerializeField]
-    private float _speed = 3.5f; // velocidad de 3,5 metros por segundo
+    private float _speed = 5f; // velocidad de 3,5 metros por segundo
+    private float _speedRun = 10f;
 
     private readonly float _gravity = -9.81f; // gravedad de la tierra
 
@@ -31,6 +32,11 @@ public class Player : MonoBehaviour
     private int _currentAmmo;
     private int _maxArmo = 50;
     private bool _isReloading = false;
+
+
+    [SerializeField]
+    public bool _weaponHeavy = false;
+    public bool _weaponAk47 = true;
 
     private UIManager _uiManager;
     void Start()
@@ -79,7 +85,15 @@ public class Player : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal"); //teclas ws
         float verticalInput = Input.GetAxis("Vertical"); //teclas ad
         Vector3 direction = new Vector3(horizontalInput, 0, verticalInput);
-        Vector3 velocity = direction * _speed; //agregamos velocidad a la direcion del movimiento
+        Vector3 velocity;
+        if (Input.GetKey(KeyCode.LeftShift)){ //correr
+            velocity = direction * _speedRun;
+        }
+        else
+        {
+            velocity = direction * _speed; //agregamos velocidad a la direcion del movimiento
+
+        }
         velocity.y = _gravity;  //agregamos gravedad en el eje y
         velocity = transform.transform.TransformDirection(velocity);// de direciones locales a direcciones del mundo
         _controller.Move(velocity * Time.deltaTime); //velocidad de movimiento
