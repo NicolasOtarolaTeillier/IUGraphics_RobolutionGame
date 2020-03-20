@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
             _muzzleFlashEfect.SetActive(false);
             _cartridgeEjectEffect.SetActive(false);
             //_weaponAudio.Stop();
-            Debug.Log("RayCast no golpeo nada");
+            //Debug.Log("RayCast no golpeo nada");
         }
 
         if (Input.GetKeyDown(KeyCode.R)&& _isReloading == false)
@@ -119,7 +119,7 @@ public class Player : MonoBehaviour
                 _uiManager.UpdateAmmo(_currentAmmo);
                 
             }
-            Debug.Log("RayCast golpeo algo" + hitInfo.transform.name);
+            //Debug.Log("RayCast golpeo algo" + hitInfo.transform.name);
             
         }
     }
