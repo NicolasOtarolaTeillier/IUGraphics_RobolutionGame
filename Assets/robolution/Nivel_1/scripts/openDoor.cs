@@ -36,7 +36,7 @@ public class openDoor : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            _isEnter = true;
+            //_isEnter = true;
 
             if (Input.GetKeyDown(KeyCode.F))
             {

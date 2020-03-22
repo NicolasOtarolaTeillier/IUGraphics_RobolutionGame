@@ -22,7 +22,14 @@ public class Player : MonoBehaviour
     private GameObject _bulletImpactMetalEffect;
 
     [SerializeField]
-    private AudioSource _weaponAudio;
+    private GameObject _Heavy;
+
+    [SerializeField]
+    private GameObject _Ak47;
+
+
+    [SerializeField]
+    private AudioSource _Ak47Audio;
 
     [SerializeField]
     public float _fireRate = 0.1F;
@@ -38,6 +45,8 @@ public class Player : MonoBehaviour
     public bool _weaponHeavy = false;
     public bool _weaponAk47 = true;
 
+    private bool _changeWeapon = false  ;
+
     private UIManager _uiManager;
     void Start()
     {
@@ -50,6 +59,11 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Q) && _weaponHeavy == true)
+        {
+           changeWeapon();
+        }
+
 
 
         if (Input.GetMouseButton(0) && _currentAmmo > 0)
@@ -60,7 +74,7 @@ public class Player : MonoBehaviour
         {
             _muzzleFlashEfect.SetActive(false);
             _cartridgeEjectEffect.SetActive(false);
-            //_weaponAudio.Stop();
+            //_Ak47Audio.Stop();
             //Debug.Log("RayCast no golpeo nada");
         }
 
@@ -107,10 +121,10 @@ public class Player : MonoBehaviour
             if (Time.time > _nextFire)
             {
                 _nextFire = Time.time + _fireRate;
-                _weaponAudio.Stop();
-                if (_weaponAudio.isPlaying == false)
+                _Ak47Audio.Stop();
+                if (_Ak47Audio.isPlaying == false)
                 {
-                    _weaponAudio.Play();
+                    _Ak47Audio.Play();
                 }
                 _muzzleFlashEfect.SetActive(true);
                 _cartridgeEjectEffect.SetActive(true);
@@ -122,6 +136,19 @@ public class Player : MonoBehaviour
             //Debug.Log("RayCast golpeo algo" + hitInfo.transform.name);
             
         }
+    }
+    void changeWeapon() {
+        _Ak47.SetActive(_changeWeapon);
+        _Heavy.SetActive(!_changeWeapon);
+        if (_changeWeapon == true)
+        {
+            _changeWeapon = false;
+        }
+        else
+        {
+            _changeWeapon = true;
+        }
+        //Debug.Log("cambio de arma");
     }
     IEnumerator Reload()
     {
