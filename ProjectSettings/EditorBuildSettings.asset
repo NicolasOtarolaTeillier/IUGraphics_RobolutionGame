@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/robolution/Nivel_1/scene/Nivel1.unity
     guid: f8bdafb23d18733468a38defd6e085fe
-  - enabled: 1
+  - enabled: 0
     path: Assets/Nivel4.unity
     guid: 996dfcfabdf5a3443bc6c8a9273b4781
+  - enabled: 1
+    path: Assets/robolution/Nivel_4/Scene/Nivel4.unity
+    guid: c2d5ba71e400514499eaec9168f3a897
   m_configObjects: {}

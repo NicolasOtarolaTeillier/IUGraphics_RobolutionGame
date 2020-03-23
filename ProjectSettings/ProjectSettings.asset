@@ -629,10 +629,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 4fedf500-2169-43e4-ba31-830dbde76e90
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
-  projectName: RobolutionGame_v1.0
-  organizationId: nikolasotarola
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
