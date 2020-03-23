@@ -34,6 +34,7 @@ public class openDoor : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
+        //Debug.Log("dentro");
         if (other.tag == "Player")
         {
             //_isEnter = true;
