@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 //funciona
 public class Player : MonoBehaviour
 {
@@ -48,14 +49,21 @@ public class Player : MonoBehaviour
     private bool _changeWeapon = false  ;
 
     private UIManager _uiManager;
+
+    public Text textoAmmo;
+    public Text noAmmo;
+
+    public int fullAmmo = 150;
+    
+
     void Start()
     {
         _controller = GetComponent<CharacterController>(); // nos permite acceder a sus metodos para mover al personaje con move()
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        _currentAmmo = _maxArmo;
-
-        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        _currentAmmo = 30;
+        noAmmo.enabled = false;
+        _uiManager = GameObject.Find("Canvas_Fondo").GetComponent<UIManager>();
     }
     void Update()
     {
@@ -130,7 +138,7 @@ public class Player : MonoBehaviour
                 _cartridgeEjectEffect.SetActive(true);
                 Instantiate(_bulletImpactMetalEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
                 _currentAmmo--;
-                _uiManager.UpdateAmmo(_currentAmmo);
+                _uiManager.UpdateAmmo(_currentAmmo, fullAmmo);
                 
             }
             //Debug.Log("RayCast golpeo algo" + hitInfo.transform.name);
@@ -152,10 +160,31 @@ public class Player : MonoBehaviour
     }
     IEnumerator Reload()
     {
-        yield return new WaitForSeconds(1.5f);
-        _currentAmmo = _maxArmo;
-        _isReloading = false;
-        _uiManager.UpdateAmmo(_currentAmmo);
+        if(fullAmmo > 0)
+        {
+            yield return new WaitForSeconds(1.5f);
+            if(30 - _currentAmmo > fullAmmo)
+            {
+                _currentAmmo = _currentAmmo + fullAmmo;
+                fullAmmo = 0;
+            }
+            else
+            {
+                fullAmmo = fullAmmo - 30 + _currentAmmo;
+                _currentAmmo = 30;
+            }
+            
+            _isReloading = false;
+            _uiManager.UpdateAmmo(_currentAmmo, fullAmmo);
+        }
+        else
+        {
+            noAmmo.enabled = true;          
+            yield return new WaitForSeconds(1.0f);
+            noAmmo.enabled = false;
+            _isReloading = false;
+        }
+        
     }
 
 }

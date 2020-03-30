@@ -8,8 +8,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text _ammoText;
 
-    public void UpdateAmmo(int count)
+    public void UpdateAmmo(int count,int totalAmmo)
     {
-        _ammoText.text = "Ammo: " + count;
+        _ammoText.text = count+" / "+totalAmmo;
     }
 }
