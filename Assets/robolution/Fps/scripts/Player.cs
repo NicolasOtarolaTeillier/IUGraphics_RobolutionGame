@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
     
 
     void Start()
-    {
+    {        
         _controller = GetComponent<CharacterController>(); // nos permite acceder a sus metodos para mover al personaje con move()
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;

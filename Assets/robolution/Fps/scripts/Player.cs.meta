@@ -10,7 +10,13 @@ MonoImporter:
       type: 3}
   - _bulletImpactMetalEffect: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d,
       type: 3}
-  - _weaponAudio: {instanceID: 0}
+  - _Heavy: {instanceID: 0}
+  - _Ak47: {instanceID: 0}
+  - _Ak47Audio: {instanceID: 0}
+  - _uiManager: {fileID: 1277505782300528984, guid: 04cf2e92cc5abac4da494ac4c8bd3f03,
+      type: 3}
+  - textoAmmo: {instanceID: 0}
+  - noAmmo: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
