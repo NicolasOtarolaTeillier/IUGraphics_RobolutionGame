@@ -13,7 +13,6 @@ public class Vida : MonoBehaviour
     public Slider barraVida;
     public Text muertoTxt;
     public Image muertoBG;
-    public int levelID;
     
     // Start is called before the first frame update
     void Start()
@@ -22,7 +21,6 @@ public class Vida : MonoBehaviour
         barraVida.value = vidaInicial;
         muertoTxt.enabled = false;
         muertoBG.enabled = false;
-        levelID = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
@@ -42,7 +40,7 @@ public class Vida : MonoBehaviour
             muertoTxt.enabled = true;
             muertoBG.enabled = true;
             yield return new WaitForSeconds(0.7f);
-            SceneManager.LoadScene("PantallaMuerte" + levelID.ToString());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             
         }
         else
