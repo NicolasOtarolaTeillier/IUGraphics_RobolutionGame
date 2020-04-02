@@ -4,24 +4,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelMananger : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-    // Update is called once per frame
-    void Update()
-    {
-    }
+{  
+  public void Carganivel(string nivel)
+  {
+    SceneManager.LoadScene(nivel);
+  }  
 
-    public void Carganivel(string nivel){
-        SceneManager.LoadScene(nivel);
-    }
+  public void reloadScene()
+  {
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
+  }
 
-    public void Salir(){
-      Application.Quit();
-      Debug.Log("Salir");
-      
-    }
-
+  public void Salir()
+  {
+    Application.Quit();
+    Debug.Log("Salir");
+  }
 }

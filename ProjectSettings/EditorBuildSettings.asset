@@ -5,19 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/robolution/Nivel_1/animation/scene/Nivel1.unity
-    guid: f8bdafb23d18733468a38defd6e085fe
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/robolution/MainMenu/scene/Menu.unity
+    guid: 11b4fc9a9d0c17147a9b36ed1a6af489
   - enabled: 1
     path: Assets/robolution/Nivel_1/scene/Nivel1.unity
     guid: beb8d6db286177145b50df3a8f7d4622
   - enabled: 1
+    path: Assets/robolution/Game_Over/Scene/PantallaMuerte1.unity
+    guid: 8a3aaf81f0712da4891b9ac9b599f3d6
+  - enabled: 1
     path: Assets/robolution/Nivel_2/scene/Nivel_2.unity
     guid: 5045f99cc40582447aeee82da5c4cd4e
   - enabled: 1
+    path: Assets/robolution/Game_Over/Scene/PantallaMuerte2.unity
+    guid: 763d895a8504c1a43ba53cc60e389d6c
+  - enabled: 1
     path: Assets/robolution/Nivel_4/Scene/Nivel4.unity
     guid: c2d5ba71e400514499eaec9168f3a897
+  - enabled: 1
+    path: Assets/robolution/Game_Over/Scene/PantallaMuerte4.unity
+    guid: 44f2b12a1576fcd4cb238c0326778f5c
   m_configObjects: {}
