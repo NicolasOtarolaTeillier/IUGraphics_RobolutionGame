@@ -30,18 +30,18 @@ public class Vida : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.T))
         {
-            recibeDaño(10);
+            StartCoroutine(recibeDaño(10));
         }
     }
 
-    public void recibeDaño(int d)
+    IEnumerator recibeDaño(int d)
     {
         if(vidaActual <= d)
         {
             vidaActual = 0;
             muertoTxt.enabled = true;
             muertoBG.enabled = true;
-            levelID -= 1;
+            yield return new WaitForSeconds(0.7f);
             SceneManager.LoadScene("PantallaMuerte" + levelID.ToString());
             
         }
