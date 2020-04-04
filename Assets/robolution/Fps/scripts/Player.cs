@@ -52,8 +52,11 @@ public class Player : MonoBehaviour
 
     public Text textoAmmo;
     public Text noAmmo;
-
     public int fullAmmo = 150;
+
+    public int energiaActual;
+    public Slider barraEnergia;
+    public bool cansado = false;
     
 
     void Start()
@@ -64,6 +67,10 @@ public class Player : MonoBehaviour
         _currentAmmo = 30;
         noAmmo.enabled = false;
         _uiManager = GameObject.Find("Canvas_Fondo").GetComponent<UIManager>();
+        
+        barraEnergia.maxValue = 250;
+        energiaActual = 250;
+        barraEnergia.value = 250;
     }
     void Update()
     {
@@ -108,14 +115,25 @@ public class Player : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical"); //teclas ad
         Vector3 direction = new Vector3(horizontalInput, 0, verticalInput);
         Vector3 velocity;
-        if (Input.GetKey(KeyCode.LeftShift)){ //correr
+        if (!cansado && Input.GetKey(KeyCode.LeftShift)){ //correr
             velocity = direction * _speedRun;
+            energiaActual = energiaActual - 4;
+            barraEnergia.value = energiaActual;
         }
         else
         {
             velocity = direction * _speed; //agregamos velocidad a la direcion del movimiento
-
         }
+        if(!Input.GetKeyDown(KeyCode.LeftShift)  && energiaActual < 250)                    
+        {
+            energiaActual += 1;
+            barraEnergia.value = energiaActual;
+            cansado = false; 
+        } 
+        if(energiaActual <= 0)
+        {            
+            cansado = true;
+        }               
         velocity.y = _gravity;  //agregamos gravedad en el eje y
         velocity = transform.transform.TransformDirection(velocity);// de direciones locales a direcciones del mundo
         _controller.Move(velocity * Time.deltaTime); //velocidad de movimiento
@@ -186,6 +204,7 @@ public class Player : MonoBehaviour
         }
         
     }
+   
 
 }
 
