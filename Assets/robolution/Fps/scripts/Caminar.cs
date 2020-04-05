@@ -7,14 +7,13 @@ public class Caminar : MonoBehaviour
    
     CharacterController player;
     AudioSource walk;
-    AudioSource run;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<CharacterController>();
         walk = GetComponent<AudioSource>();
-        run = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

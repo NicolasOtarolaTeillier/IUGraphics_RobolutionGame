@@ -7,8 +7,8 @@ using UnityEngine;
 
 public class openDoor : MonoBehaviour
 {
-    [SerializeField]
-    private bool _isOpen = false;
+    
+    static bool _isOpen = false;
     private bool _isEnter = false;
 
     [SerializeField]
