@@ -5,37 +5,28 @@ using UnityEngine;
 public class musicaN1 : MonoBehaviour
 {
     AudioSource musica;
-    public GameObject puerta;
-    public bool paso = false;
+    private bool paso = true;
 
     // Start is called before the first frame update
     void Start()
     {
         musica = GetComponent<AudioSource>();
+        musica.volume = 0.6f;
              
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        
         if (other.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.F))
+          if(!musica.isPlaying && paso)
             {
-               paso = true; 
+                musica.Play();
+                paso = false;
             }
         }
     }
 
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (paso)
-        {
-            if(!musica.isPlaying)
-                {
-                    musica.Play();
-                }
-        }
-    }
+    
 }

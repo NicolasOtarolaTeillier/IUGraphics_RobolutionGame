@@ -17,6 +17,12 @@ public class openDoor : MonoBehaviour
     [SerializeField]
     private GameObject _door_1_right;
 
+    AudioSource openSound;
+    
+    void Start()
+    {
+        openSound = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -41,6 +47,7 @@ public class openDoor : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
+                openSound.Play();
                 Player Sofronov = other.GetComponent<Player>();
                 if (Sofronov != null)
                 {

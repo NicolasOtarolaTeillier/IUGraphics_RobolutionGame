@@ -9,7 +9,13 @@ public class runElevator : MonoBehaviour
     
     public GameObject door_1_left; 
     public GameObject door_1_right;
+    AudioSource elevatorSound;
+    private bool unaVez = true;
 
+    void Start()
+    {
+        elevatorSound = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -34,7 +40,10 @@ public class runElevator : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                Debug.Log("gachiBASS");
+                if(!elevatorSound.isPlaying && unaVez)
+                {
+                    elevatorSound.Play();
+                }
                 door_1_left.SetActive(true);
                 door_1_right.SetActive(true);
             }

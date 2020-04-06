@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class openCapsule : MonoBehaviour
 {
-    public GameObject rightW;
-    public GameObject leftW;
+    public GameObject cap1;
+    public GameObject cap2;
+    
     AudioSource openSound;
     private bool paso = false;
     private bool unaVez = true;
@@ -28,12 +29,12 @@ public class openCapsule : MonoBehaviour
                 openSound.Play();
                 unaVez = false;
             }
-            rightW.transform.position += transform.up * Time.deltaTime;
-            leftW.transform.position += transform.up * Time.deltaTime;
+            cap1.transform.position += transform.up * Time.deltaTime;
+            cap2.transform.position += transform.up * Time.deltaTime;
             if(timeF - timeI > 4.0f)
             {
-                rightW.SetActive(false);
-                leftW.SetActive(false);
+                cap1.SetActive(false);
+                cap2.SetActive(false);
             }
         }
         
@@ -43,10 +44,8 @@ public class openCapsule : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            rightW.transform.position += transform.up * Time.deltaTime;
-            leftW.transform.Translate(Vector3.forward * Time.deltaTime);
-            Debug.Log("gachiBASS");
             paso = true;
+            Debug.Log("sd");
         }
         timeI = Time.time;
         
