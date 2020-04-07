@@ -11,7 +11,7 @@ public class musicaN1 : MonoBehaviour
     void Start()
     {
         musica = GetComponent<AudioSource>();
-        musica.volume = 0.6f;
+        musica.volume = 0.5f;
              
     }
 
