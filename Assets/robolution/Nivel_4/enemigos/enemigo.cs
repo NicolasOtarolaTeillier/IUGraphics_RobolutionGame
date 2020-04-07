@@ -37,6 +37,8 @@ public class enemigo : MonoBehaviour
     public Transform puntoB;
     private bool ir = false;
 
+    private Camera camara_enemy;
+
     void Start()
     {
         Enemigo = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -107,7 +109,7 @@ public class enemigo : MonoBehaviour
                 }
                 _muzzleFlashEfect.SetActive(true);
                 _cartridgeEjectEffect.SetActive(true);
-                //Instantiate(_bulletImpactMetalEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+                Instantiate(_bulletImpactMetalEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
                 _currentAmmo--;
                // _uiManager.UpdateAmmo(_currentAmmo);
                 
