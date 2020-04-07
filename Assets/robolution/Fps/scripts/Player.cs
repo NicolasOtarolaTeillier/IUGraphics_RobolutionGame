@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
             _muzzleFlashEfect.SetActive(false);
             _cartridgeEjectEffect.SetActive(false);
             //_weaponAudio.Stop();
-            Debug.Log("RayCast no golpeo nada");
+            //Debug.Log("RayCast no golpeo nada");
         }
 
         if (Input.GetKeyDown(KeyCode.R)&& _isReloading == false)
@@ -80,6 +80,8 @@ public class Player : MonoBehaviour
         CalculateMovement(); // calcular las fisicas del objeto Player, mediante el componente CharacterController
 
     }
+
+
     void CalculateMovement()
     {
         float horizontalInput = Input.GetAxis("Horizontal"); //teclas ws
@@ -98,6 +100,9 @@ public class Player : MonoBehaviour
         velocity = transform.transform.TransformDirection(velocity);// de direciones locales a direcciones del mundo
         _controller.Move(velocity * Time.deltaTime); //velocidad de movimiento
     }
+
+
+
     void shoot()
     {
         Ray rayOrigin = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); // setiamos el vector origen hacia donde apunta el rayo
@@ -119,7 +124,7 @@ public class Player : MonoBehaviour
                 _uiManager.UpdateAmmo(_currentAmmo);
                 
             }
-            Debug.Log("RayCast golpeo algo" + hitInfo.transform.name);
+            Debug.Log("RayCast golpeo :" + hitInfo.transform.name);
             
         }
     }
