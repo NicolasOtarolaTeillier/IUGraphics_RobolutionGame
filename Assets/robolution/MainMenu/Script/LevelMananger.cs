@@ -5,19 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class LevelMananger : MonoBehaviour
 {  
-  public void Carganivel(string nivel)
-  {
-    SceneManager.LoadScene(nivel);
-  }  
+    public void Carganivel(string nivel)
+    {
+        SceneManager.LoadScene(nivel);
+    }  
 
-  public void reloadScene()
-  {
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
-  }
+    public void reloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    } 
 
-  public void Salir()
-  {
-    Application.Quit();
-    Debug.Log("Salir");
-  }
+    public void Salir()
+    {
+        Application.Quit();
+        Debug.Log("Salir");
+    }
+    public void nextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }

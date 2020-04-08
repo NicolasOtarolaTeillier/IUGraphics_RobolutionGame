@@ -15,15 +15,24 @@ EditorBuildSettings:
     path: Assets/robolution/Game_Over/Scene/PantallaMuerte1.unity
     guid: 8a3aaf81f0712da4891b9ac9b599f3d6
   - enabled: 1
+    path: Assets/robolution/NextLevel/Scene/nextLevel1.unity
+    guid: f77eb47223b400d4d9327557a938cffb
+  - enabled: 1
     path: Assets/robolution/Nivel_2/scene/Nivel_2.unity
     guid: 5045f99cc40582447aeee82da5c4cd4e
   - enabled: 1
     path: Assets/robolution/Game_Over/Scene/PantallaMuerte2.unity
     guid: 763d895a8504c1a43ba53cc60e389d6c
   - enabled: 1
+    path: Assets/robolution/NextLevel/Scene/nextLevel2.unity
+    guid: 7cf4d389d5e10f9439688f53c91260d4
+  - enabled: 1
     path: Assets/robolution/Nivel_4/Scene/Nivel4.unity
     guid: c2d5ba71e400514499eaec9168f3a897
   - enabled: 1
     path: Assets/robolution/Game_Over/Scene/PantallaMuerte4.unity
     guid: 44f2b12a1576fcd4cb238c0326778f5c
+  - enabled: 1
+    path: Assets/robolution/NextLevel/Scene/nextLevel4.unity
+    guid: 15906929a0f271e4c98d5b1dcc0fdf9b
   m_configObjects: {}
