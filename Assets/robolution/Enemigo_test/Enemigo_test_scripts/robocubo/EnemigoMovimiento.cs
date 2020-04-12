@@ -13,24 +13,26 @@ public class EnemigoMovimiento : MonoBehaviour
     private bool ir = false;
 
     public bool mirar = false;
-    Ray_enemy modoAtaque ;
+    //public GameObject modoAtack;
+    public RayEnemy modoAtaque;
 
     // Start is called before the first frame update
     void Start()
     {
         Enemigo = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        modoAtaque = GetComponent<Ray_enemy>();
+        //modoAtaque = modoAtack.GetComponent<RayEnemy>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         float dist;
         if(jugador != null){
         dist = Vector3.Distance(transform.position,jugador.position);
         if(!dentro & (dist <= distanciaMin)){
 
-            modoAtaque.ModoAtaque();
+           
 
             if(!dentro & (dist <= distanciaMin-5)){
             Enemigo.destination = this.transform.position;
@@ -41,7 +43,8 @@ public class EnemigoMovimiento : MonoBehaviour
             }
             else{
                 Enemigo.destination = jugador.position;
-            }   
+            } 
+             modoAtaque.ModoAtaque();  
         }
         }else{
             dist = distanciaMin+1;

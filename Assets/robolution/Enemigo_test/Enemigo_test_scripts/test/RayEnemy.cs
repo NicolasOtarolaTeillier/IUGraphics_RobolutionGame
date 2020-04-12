@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ray_enemy : MonoBehaviour
+public class RayEnemy : MonoBehaviour
 {
     
     public float distancia = 100f;
@@ -28,7 +28,7 @@ public class Ray_enemy : MonoBehaviour
         lineaDisparo.origin = transform.position;
         lineaDisparo.direction = transform.forward;
 
-        if(Physics.Raycast(lineaDisparo.origin, lineaDisparo.direction, out golpeDisparo, distancia) && modoAtaque){
+        if(Physics.Raycast(lineaDisparo.origin, lineaDisparo.direction, out golpeDisparo, distancia) && (modoAtaque == true) ){
             
             
 
@@ -48,17 +48,19 @@ public class Ray_enemy : MonoBehaviour
 
         }
     }
-    private void OnDrawGizmos() {
+    void OnDrawGizmos() {
 
         Gizmos.color = Color.blue;
         Gizmos.DrawRay(lineaDisparo.origin,lineaDisparo.direction *distancia);    
     }    
 
     public void ModoAtaque(){
+        Debug.Log("modo ataque activado");
         modoAtaque = true;
     }
 
     public void ModoAtaqueOff(){
+        Debug.Log("modo ataque activado");
         modoAtaque = false;
     }
 }
