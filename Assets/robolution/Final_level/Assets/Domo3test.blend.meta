@@ -10,6 +10,7 @@ ModelImporter:
     400002: Light
     400004: Sphere
     2100000: Material.002
+    2100002: Material.001
     2300000: Sphere
     3300000: Sphere
     4300000: Sphere
