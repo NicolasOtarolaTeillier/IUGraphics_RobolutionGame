@@ -12,28 +12,34 @@ public class Ray_enemy : MonoBehaviour
 
     public GameObject effect;
     public float force = 10;
-
+    float timeRay = 1.0f; 
+    float tiempo;
+    bool modoAtaque = false;
     void Start()
     {
         Debug.Log("hola mundo");
+        tiempo = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        tiempo += Time.deltaTime;
         lineaDisparo.origin = transform.position;
         lineaDisparo.direction = transform.forward;
 
-        if(Physics.Raycast(lineaDisparo.origin, lineaDisparo.direction, out golpeDisparo, distancia) ){
+        if(Physics.Raycast(lineaDisparo.origin, lineaDisparo.direction, out golpeDisparo, distancia) && modoAtaque){
             
-            GameObject _efectt = Instantiate(effect , golpeDisparo.point, Quaternion.identity);
-            Destroy(_efectt, 0.2f);
+            
 
             VidaPlayer enemigoVida = golpeDisparo.collider.GetComponent<VidaPlayer>();
 
-            if(enemigoVida != null){
+            if(enemigoVida != null && tiempo > timeRay){
+                tiempo = 0;
+                GameObject _efectt = Instantiate(effect , golpeDisparo.point, Quaternion.identity);
+                Destroy(_efectt, 0.2f);
                 enemigoVida.RecibirDamaged(10);
-                Debug.Log("disparando... player");
+                //Debug.Log("disparando... player");
             }
 
             if(golpeDisparo.collider.GetComponent<Rigidbody>() != null){
@@ -46,5 +52,13 @@ public class Ray_enemy : MonoBehaviour
 
         Gizmos.color = Color.blue;
         Gizmos.DrawRay(lineaDisparo.origin,lineaDisparo.direction *distancia);    
+    }    
+
+    public void ModoAtaque(){
+        modoAtaque = true;
+    }
+
+    public void ModoAtaqueOff(){
+        modoAtaque = false;
     }
 }

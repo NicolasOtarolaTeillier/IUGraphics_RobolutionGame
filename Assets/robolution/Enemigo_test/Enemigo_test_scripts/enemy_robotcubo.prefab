@@ -231,6 +231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distancia: 100
+  effect: {fileID: 0}
+  force: 10
 --- !u!1 &3908162009692483778
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,9 +244,11 @@ GameObject:
   - component: {fileID: 3908162009692483782}
   - component: {fileID: 3908162009692483783}
   - component: {fileID: 3908162009692483780}
+  - component: {fileID: 4529295612224132983}
   - component: {fileID: 3908162009692483781}
   - component: {fileID: 3908162009692483801}
   - component: {fileID: 3908162009692483800}
+  - component: {fileID: 3331589503858471806}
   m_Layer: 0
   m_Name: enemy_robotcubo
   m_TagString: Untagged
@@ -313,6 +317,26 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4529295612224132983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3908162009692483778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58643398de367294e8a75f9d7d8ee9f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  estableserVida: 1000
+  obtenerVida: 0
+  partes: {fileID: 0}
+  isEnemy: 0
+  isRobot: 0
+  isCyborg: 0
+  exp_1: {fileID: 0}
+  exp_2: {fileID: 0}
 --- !u!65 &3908162009692483781
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -342,6 +366,7 @@ MonoBehaviour:
   distanciaMin: 10
   puntoA: {fileID: 0}
   puntoB: {fileID: 0}
+  mirar: 0
 --- !u!195 &3908162009692483800
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -364,6 +389,14 @@ NavMeshAgent:
   m_BaseOffset: 1.46
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!81 &3331589503858471806
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3908162009692483778}
+  m_Enabled: 1
 --- !u!1 &3908162009756476875
 GameObject:
   m_ObjectHideFlags: 0
