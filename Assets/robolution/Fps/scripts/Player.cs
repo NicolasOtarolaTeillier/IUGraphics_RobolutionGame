@@ -70,12 +70,17 @@ public class Player : MonoBehaviour
     
 
     void Start()
-    {   _imageCredential.SetActive(false);
+    {   
+        if(_imageCredential != null){
+            _imageCredential.SetActive(false);
+        }
+        
         _controller = GetComponent<CharacterController>(); // nos permite acceder a sus metodos para mover al personaje con move()
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         _currentAmmo = 30;
         noAmmo.enabled = false;
+
         _uiManager = GameObject.Find("Canvas_Fondo").GetComponent<UIManager>();
         
         barraEnergia.maxValue = 250;
