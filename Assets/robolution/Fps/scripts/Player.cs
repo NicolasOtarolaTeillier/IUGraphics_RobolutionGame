@@ -28,6 +28,11 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _Ak47;
 
+    [SerializeField]
+    private GameObject _FlashLight;
+    public bool _Light = false;
+
+
 
     [SerializeField]
     private AudioSource _Ak47Audio;
@@ -77,6 +82,17 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && _weaponHeavy == true)
         {
            changeWeapon();
+        }
+        if (Input.GetKeyDown(KeyCode.L)){
+            if(_Light == false){
+                _Light = true;
+                 _FlashLight.SetActive(_Light);
+            }
+            else{
+                 _Light = false;
+                 _FlashLight.SetActive(_Light);
+            }
+
         }
 
 
