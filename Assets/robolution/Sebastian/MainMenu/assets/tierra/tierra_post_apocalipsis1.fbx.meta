@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bf0fc2415b288424dbcbd7b528fdc8c0
+guid: 4bc98974442108349b52218f372177be
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -31,8 +31,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: abda3e1f952568646bd8699f511ac6e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: tierra_contaminada
-    second: {fileID: 2100000, guid: ccaaea54ee3e5cc47b61728e2e0ae7fc, type: 2}
+    second: {fileID: 2100000, guid: 00805313afa32c249a19c1b3df3656d2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
