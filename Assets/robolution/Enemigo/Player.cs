@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     public bool _weaponHeavy = false;
     public bool _weaponAk47 = true;
 
+    public float force = 100;
     private UIManager _uiManager;
     void Start()
     {
@@ -107,14 +108,30 @@ public class Player : MonoBehaviour
             if (Time.time > _nextFire)
             {
                 _nextFire = Time.time + _fireRate;
-                _weaponAudio.Stop();
+                /**_weaponAudio.Stop();
                 if (_weaponAudio.isPlaying == false)
                 {
                     _weaponAudio.Play();
+                }**/
+
+                VidaPlayer enemigoVida = hitInfo.collider.GetComponent<VidaPlayer>();
+
+                 if(enemigoVida != null){
+                    //GameObject _efectt = Instantiate(effect , golpeDisparo.point, Quaternion.identity);
+                    //Destroy(_efectt, 0.2f);
+                    enemigoVida.RecibirDamaged(10);
+                    //Debug.Log("disparando... player");
                 }
+
+                if(hitInfo.collider.GetComponent<Rigidbody>() != null){
+                    hitInfo.collider.GetComponent<Rigidbody>().AddForce(hitInfo.normal * force * -1.0f);
+                }
+
+
                 _muzzleFlashEfect.SetActive(true);
                 _cartridgeEjectEffect.SetActive(true);
-                Instantiate(_bulletImpactMetalEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+                GameObject efecto = Instantiate(_bulletImpactMetalEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+                 Destroy(efecto, 0.2f);
                 _currentAmmo--;
                 _uiManager.UpdateAmmo(_currentAmmo);
                 
