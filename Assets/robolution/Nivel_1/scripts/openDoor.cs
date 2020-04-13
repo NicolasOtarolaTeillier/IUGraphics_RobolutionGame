@@ -8,7 +8,8 @@ using UnityEngine;
 public class openDoor : MonoBehaviour
 {
     [SerializeField]
-    private bool _isOpen = false;
+    public bool _isOpen = false;
+
     private bool _isEnter = false;
 
     [SerializeField]
@@ -17,11 +18,17 @@ public class openDoor : MonoBehaviour
     [SerializeField]
     private GameObject _door_1_right;
 
+
+
+
     AudioSource openSound;
     
     void Start()
     {
         openSound = GetComponent<AudioSource>();
+    }
+    public void setEstado(){
+        _isOpen = false;
     }
     private void OnTriggerEnter(Collider other)
     {
