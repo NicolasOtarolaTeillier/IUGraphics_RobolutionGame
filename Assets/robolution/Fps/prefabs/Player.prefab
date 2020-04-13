@@ -197,8 +197,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 1
+  m_Height: 2.46
+  m_Radius: 0.52
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -231,6 +231,9 @@ MonoBehaviour:
   textoAmmo: {fileID: 0}
   noAmmo: {fileID: 0}
   fullAmmo: 150
+  energiaActual: 0
+  barraEnergia: {fileID: 0}
+  cansado: 0
 --- !u!114 &114216220362195274
 MonoBehaviour:
   m_ObjectHideFlags: 0
