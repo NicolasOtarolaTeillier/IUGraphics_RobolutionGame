@@ -69,9 +69,10 @@ public class vanguard_caminar : MonoBehaviour
             //animacion.SetBool("running",run);
             animacion.SetTrigger("atacar");
             Atack();
+            Enemigo.destination = this.transform.position;
         }
 
-        if(!dentro & (dist <= distanciaMin)){
+        if(!dentro & (dist <= distanciaMin) && (dist >= 2.0f)){
             
             /**if(!dentro & (dist <= distanciaMin)){
             Enemigo.destination = this.transform.position;
