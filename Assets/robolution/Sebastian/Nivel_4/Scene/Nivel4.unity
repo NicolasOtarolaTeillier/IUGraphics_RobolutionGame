@@ -388,6 +388,16 @@ PrefabInstance:
       propertyPath: jugador
       value: 
       objectReference: {fileID: 7144039643425920137}
+    - target: {fileID: 5721007320504561114, guid: 516ee29f03856a44cb8529ec554364da,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031615612805100551, guid: 516ee29f03856a44cb8529ec554364da,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9031615612805100572, guid: 516ee29f03856a44cb8529ec554364da,
         type: 3}
       propertyPath: jugador

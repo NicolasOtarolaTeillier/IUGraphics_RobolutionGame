@@ -67,6 +67,9 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private GameObject _imageCredential;
+
+    public float force = 100;
+
     
 
     void Start()
@@ -176,10 +179,24 @@ public class Player : MonoBehaviour
             if (Time.time > _nextFire)
             {
                 _nextFire = Time.time + _fireRate;
+                /*
                 _Ak47Audio.Stop();
                 if (_Ak47Audio.isPlaying == false)
                 {
                     _Ak47Audio.Play();
+                }
+                */
+                VidaPlayer enemigoVida = hitInfo.collider.GetComponent<VidaPlayer>();
+
+                 if(enemigoVida != null){
+                    //GameObject _efectt = Instantiate(effect , golpeDisparo.point, Quaternion.identity);
+                    //Destroy(_efectt, 0.2f);
+                    enemigoVida.RecibirDamaged(10);
+                    //Debug.Log("disparando... player");
+                }
+
+                if(hitInfo.collider.GetComponent<Rigidbody>() != null){
+                    hitInfo.collider.GetComponent<Rigidbody>().AddForce(hitInfo.normal * force * -1.0f);
                 }
                 _muzzleFlashEfect.SetActive(true);
                 _cartridgeEjectEffect.SetActive(true);
