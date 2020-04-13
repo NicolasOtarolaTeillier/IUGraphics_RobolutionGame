@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
     {
 
 
+<<<<<<< Updated upstream:Assets/Scripts/Player.cs
         if (Input.GetMouseButton(0) && _currentAmmo > 0)
         {
             shoot();
@@ -58,6 +59,9 @@ public class Player : MonoBehaviour
             Debug.Log("RayCast no golpeo nada");
         }
 
+=======
+       
+>>>>>>> Stashed changes:Assets/robolution/Fps/scripts/Player.cs
         if (Input.GetKeyDown(KeyCode.R)&& _isReloading == false)
         {
             _isReloading = true;
@@ -66,14 +70,25 @@ public class Player : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Escape)) //ocultar el mouse de la vista
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.None;
-        }
+      
         CalculateMovement(); // calcular las fisicas del objeto Player, mediante el componente CharacterController
 
     }
+    void FixedUpdate(){
+         if (Input.GetMouseButton(0) && _currentAmmo > 0)
+        {
+            shoot();
+        }
+        else
+        {
+            _muzzleFlashEfect.SetActive(false);
+            _cartridgeEjectEffect.SetActive(false);
+            //_Ak47Audio.Stop();
+            //Debug.Log("RayCast no golpeo nada");
+        }
+
+    }
+    
     void CalculateMovement()
     {
         float horizontalInput = Input.GetAxis("Horizontal"); //teclas ws
