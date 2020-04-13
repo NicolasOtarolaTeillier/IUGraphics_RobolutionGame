@@ -7,6 +7,7 @@ public class LevelMananger : MonoBehaviour
 {  
     public void Carganivel(string nivel)
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(nivel);
     }  
 

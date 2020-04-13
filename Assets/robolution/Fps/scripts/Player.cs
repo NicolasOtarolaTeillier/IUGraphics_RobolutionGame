@@ -87,6 +87,20 @@ public class Player : MonoBehaviour
         energiaActual = 250;
         barraEnergia.value = 250;
     }
+    private void FixedUpdate() {
+        if (Input.GetMouseButton(0) && _currentAmmo > 0)
+        {
+            shoot();
+        }
+        else
+        {
+            _muzzleFlashEfect.SetActive(false);
+            _cartridgeEjectEffect.SetActive(false);
+            //_Ak47Audio.Stop();
+            //Debug.Log("RayCast no golpeo nada");
+        }
+
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q) && _weaponHeavy == true)
@@ -107,18 +121,7 @@ public class Player : MonoBehaviour
 
 
 
-        if (Input.GetMouseButton(0) && _currentAmmo > 0)
-        {
-            shoot();
-        }
-        else
-        {
-            _muzzleFlashEfect.SetActive(false);
-            _cartridgeEjectEffect.SetActive(false);
-            //_Ak47Audio.Stop();
-            //Debug.Log("RayCast no golpeo nada");
-        }
-
+        
         if (Input.GetKeyDown(KeyCode.R)&& _isReloading == false)
         {
             _isReloading = true;

@@ -30,7 +30,8 @@ public class CameraMovement : MonoBehaviour
             targetCharacterDirection = characterBody.transform.localRotation.eulerAngles;
     }
 
-    void Update()
+    
+    void FixedUpdate()
     {
         // Ensure the cursor is always locked when set
         //Cursor.lockState = CursorLockMode.Locked;
