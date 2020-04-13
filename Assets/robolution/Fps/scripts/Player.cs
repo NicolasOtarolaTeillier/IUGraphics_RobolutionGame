@@ -33,7 +33,6 @@ public class Player : MonoBehaviour
     public bool _Light = false;
 
 
-
     [SerializeField]
     private AudioSource _Ak47Audio;
 
@@ -62,10 +61,16 @@ public class Player : MonoBehaviour
     public int energiaActual;
     public Slider barraEnergia;
     public bool cansado = false;
+
+    [SerializeField]
+    public bool _credential = false;
+
+    [SerializeField]
+    private GameObject _imageCredential;
     
 
     void Start()
-    {        
+    {   _imageCredential.SetActive(false);
         _controller = GetComponent<CharacterController>(); // nos permite acceder a sus metodos para mover al personaje con move()
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -219,6 +224,13 @@ public class Player : MonoBehaviour
             _isReloading = false;
         }
         
+    }
+    public void uploadCredential(bool _cred){
+        _credential = _cred;
+        _imageCredential.SetActive(true);
+    }
+    public bool getCredential(){
+        return _credential;
     }
    
 
