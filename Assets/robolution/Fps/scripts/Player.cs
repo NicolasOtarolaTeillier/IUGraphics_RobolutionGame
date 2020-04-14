@@ -86,9 +86,9 @@ public class Player : MonoBehaviour
 
         _uiManager = GameObject.Find("Canvas_Fondo").GetComponent<UIManager>();
         
-        barraEnergia.maxValue = 250;
-        energiaActual = 250;
-        barraEnergia.value = 250;
+        barraEnergia.maxValue = 500;
+        energiaActual = 500;
+        barraEnergia.value = 500;
     }
     private void FixedUpdate() {
         if (Input.GetMouseButton(0) && _currentAmmo > 0)
@@ -156,9 +156,9 @@ public class Player : MonoBehaviour
         {
             velocity = direction * _speed; //agregamos velocidad a la direcion del movimiento
         }
-        if(!Input.GetKeyDown(KeyCode.LeftShift)  && energiaActual < 250)                    
+        if(!Input.GetKeyDown(KeyCode.LeftShift)  && energiaActual < 500)                    
         {
-            energiaActual += 1;
+            energiaActual += 2;
             barraEnergia.value = energiaActual;
             cansado = false; 
         } 
@@ -179,13 +179,13 @@ public class Player : MonoBehaviour
             if (Time.time > _nextFire)
             {
                 _nextFire = Time.time + _fireRate;
-                /*
+                
                 _Ak47Audio.Stop();
                 if (_Ak47Audio.isPlaying == false)
                 {
                     _Ak47Audio.Play();
                 }
-                */
+                
                 VidaPlayer enemigoVida = hitInfo.collider.GetComponent<VidaPlayer>();
 
                  if(enemigoVida != null){

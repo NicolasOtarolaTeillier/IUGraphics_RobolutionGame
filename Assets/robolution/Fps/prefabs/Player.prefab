@@ -223,6 +223,8 @@ MonoBehaviour:
     type: 3}
   _Heavy: {fileID: 713361280642431561}
   _Ak47: {fileID: 181669288510700466}
+  _FlashLight: {fileID: 0}
+  _Light: 0
   _Ak47Audio: {fileID: 181669288862195953}
   _fireRate: 0.1
   _currentAmmo: 0
@@ -234,6 +236,9 @@ MonoBehaviour:
   energiaActual: 0
   barraEnergia: {fileID: 0}
   cansado: 0
+  _credential: 0
+  _imageCredential: {fileID: 0}
+  force: 100
 --- !u!114 &114216220362195274
 MonoBehaviour:
   m_ObjectHideFlags: 0

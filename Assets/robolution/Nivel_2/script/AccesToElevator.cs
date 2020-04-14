@@ -57,7 +57,6 @@ public class AccesToElevator : MonoBehaviour
                         }
                         door_1_left.SetActive(true);
                         door_1_right.SetActive(true);
-                       
                         _luzR.SetActive(false);
                         _luzV.SetActive(true);
                     }
