@@ -37,6 +37,9 @@ public class Player : MonoBehaviour
     private AudioSource _Ak47Audio;
 
     [SerializeField]
+    private AudioSource _HeavyAudio;
+
+    [SerializeField]
     public float _fireRate = 0.1F;
     private float _nextFire = 0.0F;
 
@@ -100,6 +103,7 @@ public class Player : MonoBehaviour
             _muzzleFlashEfect.SetActive(false);
             _cartridgeEjectEffect.SetActive(false);
             //_Ak47Audio.Stop();
+            _HeavyAudio.Stop();
             //Debug.Log("RayCast no golpeo nada");
         }
 
@@ -181,10 +185,22 @@ public class Player : MonoBehaviour
                 _nextFire = Time.time + _fireRate;
                 
                 _Ak47Audio.Stop();
-                if (_Ak47Audio.isPlaying == false)
-                {
+                
+                if(_weaponAk47){
+                    if (_Ak47Audio.isPlaying == false)
+                    {
                     _Ak47Audio.Play();
+                    }
                 }
+
+                _HeavyAudio.Stop();
+                if(_weaponHeavy){
+                    if (_HeavyAudio.isPlaying == false)
+                    {
+                    _HeavyAudio.Play();
+                    }
+                }
+                
                 
                 VidaPlayer enemigoVida = hitInfo.collider.GetComponent<VidaPlayer>();
 

@@ -44737,78 +44737,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1968481818}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &893920687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893920686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b6a49547dfd0e841975dad7963d7c48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vidaInicial: 100
-  vidaActual: 0
-  barraVida: {fileID: 1255937430}
-  muertoTxt: {fileID: 267077065}
-  muertoBG: {fileID: 1515139894}
---- !u!114 &893920688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893920686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7770109fb25a90d44bb26a63ffb877e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &893920696 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 181669287485190138, guid: 8b4934ab3e8d77146aed1f478adf8796,
     type: 3}
   m_PrefabInstance: {fileID: 1968481818}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &893920697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893920686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68f710648f1463f4f81856cd7f63f132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 5
-  _muzzleFlashEfect: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4,
-    type: 3}
-  _cartridgeEjectEffect: {fileID: 1000013947318026, guid: 7ca96822084510147adb2aea03d45e3b,
-    type: 3}
-  _bulletImpactMetalEffect: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d,
-    type: 3}
-  _Heavy: {fileID: 0}
-  _Ak47: {fileID: 0}
-  _FlashLight: {fileID: 0}
-  _Light: 0
-  _Ak47Audio: {fileID: 0}
-  _fireRate: 0.1
-  _currentAmmo: 0
-  _weaponHeavy: 0
-  _weaponAk47: 1
-  textoAmmo: {fileID: 0}
-  noAmmo: {fileID: 0}
-  fullAmmo: 150
-  energiaActual: 0
-  barraEnergia: {fileID: 0}
-  cansado: 0
-  _credential: 0
-  _imageCredential: {fileID: 0}
-  force: 100
 --- !u!4 &895634603 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 440452, guid: 7bfca64f0cf4ef248b199077f3f98357,
@@ -88036,7 +87970,22 @@ PrefabInstance:
         type: 3}
       propertyPath: _imageCredential
       value: 
-      objectReference: {fileID: 66397624}
+      objectReference: {fileID: 0}
+    - target: {fileID: 181669287485190143, guid: 8b4934ab3e8d77146aed1f478adf8796,
+        type: 3}
+      propertyPath: _FlashLight
+      value: 
+      objectReference: {fileID: 1968481821}
+    - target: {fileID: 181669287485190143, guid: 8b4934ab3e8d77146aed1f478adf8796,
+        type: 3}
+      propertyPath: _credential
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 181669287485190143, guid: 8b4934ab3e8d77146aed1f478adf8796,
+        type: 3}
+      propertyPath: _HeavyAudio
+      value: 
+      objectReference: {fileID: 1968481824}
     - target: {fileID: 713361280642431561, guid: 8b4934ab3e8d77146aed1f478adf8796,
         type: 3}
       propertyPath: m_Name
@@ -88047,6 +87996,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3913633023947031789, guid: 8b4934ab3e8d77146aed1f478adf8796,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173783826119414500, guid: 8b4934ab3e8d77146aed1f478adf8796,
+        type: 3}
+      propertyPath: barraVida
+      value: 
+      objectReference: {fileID: 1255937430}
+    - target: {fileID: 7173783826119414500, guid: 8b4934ab3e8d77146aed1f478adf8796,
+        type: 3}
+      propertyPath: muertoBG
+      value: 
+      objectReference: {fileID: 1515139894}
+    - target: {fileID: 7173783826119414500, guid: 8b4934ab3e8d77146aed1f478adf8796,
+        type: 3}
+      propertyPath: muertoTxt
+      value: 
+      objectReference: {fileID: 267077065}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b4934ab3e8d77146aed1f478adf8796, type: 3}
 --- !u!82 &1968481819 stripped
@@ -88058,6 +88027,18 @@ AudioSource:
 --- !u!1 &1968481820 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 713361280642431561, guid: 8b4934ab3e8d77146aed1f478adf8796,
+    type: 3}
+  m_PrefabInstance: {fileID: 1968481818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1968481821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3560657318387507164, guid: 8b4934ab3e8d77146aed1f478adf8796,
+    type: 3}
+  m_PrefabInstance: {fileID: 1968481818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1968481824 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1671787120445488914, guid: 8b4934ab3e8d77146aed1f478adf8796,
     type: 3}
   m_PrefabInstance: {fileID: 1968481818}
   m_PrefabAsset: {fileID: 0}

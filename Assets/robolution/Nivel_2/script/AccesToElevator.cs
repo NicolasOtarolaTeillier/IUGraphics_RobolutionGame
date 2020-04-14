@@ -13,8 +13,9 @@ public class AccesToElevator : MonoBehaviour
 
     public bool _credential = false;
 
-    private GameObject _luzV;
-    private GameObject _luzR;
+    public GameObject _luzV;
+
+    public GameObject _luzR;
 
     //cambiar nivel
     public GameObject door_1_left;
@@ -51,14 +52,17 @@ public class AccesToElevator : MonoBehaviour
                     if (_credential){
                         if(!elevatorSound.isPlaying && unaVez)
                         {
+                            
+                            _luzR.SetActive(false);
+                            _luzV.SetActive(true);
+                            door_1_left.SetActive(true);
+                            door_1_right.SetActive(true);
                             elevatorSound.Play();
                             StartCoroutine(Fade());
                             unaVez = false;
                         }
-                        door_1_left.SetActive(true);
-                        door_1_right.SetActive(true);
-                        _luzR.SetActive(false);
-                        _luzV.SetActive(true);
+                        
+                        
                     }
 
                 }
