@@ -13,12 +13,15 @@ public class Vida : MonoBehaviour
     public Slider barraVida;
     public Text muertoTxt;
     public Image muertoBG;
+
+    VidaPlayer vida;
     
     // Start is called before the first frame update
     void Start()
     {
-        vidaActual = vidaInicial;
-        barraVida.value = vidaInicial;
+        vida = GetComponent<VidaPlayer>();
+        vidaActual = vida.GetLife();
+        barraVida.value = vida.GetLife();
         muertoTxt.enabled = false;
         muertoBG.enabled = false;
     }
@@ -26,9 +29,11 @@ public class Vida : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.T))
+        if(vidaActual != vida.GetLife())
         {
             StartCoroutine(recibeDaño(10));
+            vidaActual = vida.GetLife();
+            barraVida.value = vida.GetLife();
         }
     }
 

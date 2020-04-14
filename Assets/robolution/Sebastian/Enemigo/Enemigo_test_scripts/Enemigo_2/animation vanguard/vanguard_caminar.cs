@@ -64,7 +64,7 @@ public class vanguard_caminar : MonoBehaviour
             Atack();
         }**/
 
-        if(tiempo >= duracionAtaque && dist<2.0f){
+        if(tiempo >= duracionAtaque && dist<2.6f){
             //run = false;
             //animacion.SetBool("running",run);
             animacion.SetTrigger("atacar");
@@ -72,7 +72,7 @@ public class vanguard_caminar : MonoBehaviour
             Enemigo.destination = this.transform.position;
         }
 
-        if(!dentro & (dist <= distanciaMin) && (dist >= 2.0f)){
+        if(!dentro & (dist <= distanciaMin) && (dist >= 2.6f)){
             
             /**if(!dentro & (dist <= distanciaMin)){
             Enemigo.destination = this.transform.position;

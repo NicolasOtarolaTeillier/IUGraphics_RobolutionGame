@@ -38,6 +38,8 @@ public class VidaPlayer : MonoBehaviour
     public AudioSource audioExplosion;
     
 
+    public bool isPlayer = false;
+
     //Estableser valores antes que inicie el juego
     void Awake(){
         //animaciones = GetComponent<Animator>();
@@ -134,10 +136,15 @@ public class VidaPlayer : MonoBehaviour
                 mesh.enabled = false;
                 col.enabled = false;
             }
+            if(isPlayer == false){
             Destroy(partes,0.1f);
-
             Destroy(gameObject,2.0f);
+            }
             
+        }
+
+        public int GetLife(){
+            return obtenerVida;
         }
 
 }
