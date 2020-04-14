@@ -27,8 +27,17 @@ EditorBuildSettings:
     path: Assets/robolution/NextLevel/Scene/nextLevel2.unity
     guid: 7cf4d389d5e10f9439688f53c91260d4
   - enabled: 1
-    path: Assets/robolution/Nivel_4/Scene/Nivel4.unity
-    guid: c2d5ba71e400514499eaec9168f3a897
+    path: Assets/robolution/Nivel_3/scene/Nivel_3.unity
+    guid: 4d3577f3e9367344b91f9888db588a99
+  - enabled: 1
+    path: Assets/robolution/Game_Over/Scene/PantallaMuerte3.unity
+    guid: e099eba374c9b56418d01483a4104c1a
+  - enabled: 1
+    path: Assets/robolution/NextLevel/Scene/nextLevel3.unity
+    guid: 29ebb8e9660df3d498ea83872255d785
+  - enabled: 1
+    path: Assets/robolution/Nivel_final/Scene/Final_boss.unity
+    guid: 38221511d4035344b97dc37e49e5f2f4
   - enabled: 1
     path: Assets/robolution/Game_Over/Scene/PantallaMuerte4.unity
     guid: 44f2b12a1576fcd4cb238c0326778f5c
